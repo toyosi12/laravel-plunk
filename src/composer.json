@@ -1,0 +1,29 @@
+{
+    "name": "toyosi12/laravel-plunk",
+    "description": "Plunk is the afforable, developer-friendly email platform that brings together marketing, transactional and broadbase emails into one single, complete solution",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "toyosi12",
+            "email": "toyosioyelayo@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Toyosi12\\Plunk\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Toyosi12\\Plunk\\PlunkServiceProvider"
+            ],
+            "aliases": {
+                "Plunk": "Toyosi12\\Plunk\\Facade\\Plunk"
+            }
+        }
+    }
+}
