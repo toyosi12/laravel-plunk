@@ -13,27 +13,19 @@
 To get the latest version of Laravel Plunk, simply require it
 
 ```bash
-composer require laravel-plunk
+composer require toyosi12/laravel-plunk
 ```
 Once installed, the package automatically registers its service provider and facade.
-
-
-## Configuration
-You can publish the configuration file using this command:
-```bash
-php artisan vendor:publish --provider="Toyosi12\Plunk\PlunkServiceProvider"
-```
-A configuration file 'plunk.php' with some defaults is placed in your config directory.
-
 ## Usage
 
 
-### 1. Update your environment file with your secret key as described below. Login to your Plunk dashboard to obtain your secret key.
+#### 1. Update your environment file with your secret key as described below. 
 ```php
 PLUNK_SECRET_KEY="<SECRET_KEY>"
-```
+``` 
+Login to your Plunk dashboard to obtain your secret key. 
 
-### 2. Make a call to the method you need.
+#### 2. Make a call to the method you need.
 ```php
 use Toyosi12\Plunk\Facades\Plunk;
 Plunk::countContacts();
@@ -44,7 +36,7 @@ Plunk::countContacts();
 
  ### Events
  
- - triggerEvent()
+ - triggerEvent() 
  Used to publish an event
 
  **Parameters**
@@ -52,20 +44,20 @@ Plunk::countContacts();
  - email: The email address of the user to publish the event to 
  - data [Optional]: An object containing the data to attach to the user
 
- Sample request: 
- ```php
-    use Toyosi12\Plunk\Facades\Plunk;
-    $request = {
-        "event": "test-project",
-        "email": "toyosi@nomail.com"
-    }
-    Plunk::triggerEvent($request);
- ```
+Sample request: 
+```php
+use Toyosi12\Plunk\Facades\Plunk;
+$request = {
+    "event": "test-project",
+    "email": "toyosi@nomail.com"
+}
+Plunk::triggerEvent($request);
+```
 
 
  ### Emails
  
- - triggerEvent()
+ - sendTransactionalEmail() 
  Used to send transactional email
 
  **Parameters**
@@ -77,15 +69,15 @@ Plunk::countContacts();
 - name [Optional]: The name of the sender
 - withUnsubscribe [Optional]: Whether to include an unsubscribe link hosted by Plunk in the email
 
- Sample request: 
- ```php
-    use Toyosi12\Plunk\Facades\Plunk;
-    $request = {
-        "to": "toyosi@nomail.com",
-        "subject": "Test Plunk",
-        "body": "Testing plunk"
-    }
-    Plunk::sendTransactionalEmail($request);
+Sample request: 
+```php
+use Toyosi12\Plunk\Facades\Plunk;
+$request = {
+    "to": "toyosi@nomail.com",
+    "subject": "Test Plunk",
+    "body": "Testing plunk"
+}
+Plunk::sendTransactionalEmail($request);
 ```
  ## Contributing
  Do feel free to fork this repo and contribute by submitting a pull request. Let's make it better.
