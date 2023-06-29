@@ -9,5 +9,5 @@
      /**
       * Secret Key
       */
-     'secretKey' => env('SECRET_KEY')
+     'secretKey' => env('PLUNK_SECRET_KEY')
  ];
